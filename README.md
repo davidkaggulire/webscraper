@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/davidkaggulire/webscraper.svg?branch=main)](https://app.travis-ci.com/davidkaggulire/webscraper)
+
 [![Coverage Status](https://coveralls.io/repos/github/davidkaggulire/webscraper/badge.svg?branch=main)](https://coveralls.io/github/davidkaggulire/webscraper?branch=main)
 
 # Webscraper
