@@ -1,0 +1,5 @@
+venv/
+.pytest_cache/
+alice.txt
+tests/__pycache__
+__pycache__/
