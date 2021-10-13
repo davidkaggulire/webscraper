@@ -16,6 +16,13 @@ addons:
 
 before_script:
   - export DISPLAY=:99.0
+  - sudo apt-get install unzip
+  - wget -N http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip -P ~/Downloads
+  - unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads
+  - sudo mv -f ~/Downloads/chromedriver /usr/local/share/
+  - sudo chmod +x /usr/local/share/chromedriver
+  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  - sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 
 install:
   - pip install -r requirements.txt
