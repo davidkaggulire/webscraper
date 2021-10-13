@@ -5,13 +5,12 @@
 [![codecov](https://codecov.io/gh/davidkaggulire/webscraper/branch/main/graph/badge.svg?token=FK4L7HYDKH)](https://codecov.io/gh/davidkaggulire/webscraper)
 
 # Webscraper
-Python Webscraper that fetches a list of companies from a text file and scrapes Twitter using the given company names
+The Webscraper is built using python to fetch companies from a text file, search for each company's Twitter page, scrape the Twitter page and further navigate to the individual company site to get the company's email address. The email address together with the company name are then written to a file in a format of:
+`{ company_name: email_address }`
 
 # Functionality
 The Python webscraper uses the requests library to get the google search results of the company name. Based on this company name, it returns all result URLs, from which it automatically picks the Twitter URL with regex.
-After picking the URL, it surfs the Twitter page of the given company and picks out the number of people the company is following.
-
-On completion all this output is written into a text file.
+After picking the URL, it surfs the Twitter page of the given company and picks the website link for the company. It then redirects to the company website and picks its email through regex and writes the content of both email and company name to a text file.
 
 # Dependencies
 attrs==21.2.0
