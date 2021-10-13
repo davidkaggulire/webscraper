@@ -15,7 +15,7 @@ addons:
 before_script:
   - export DISPLAY=:99.0
   - echo $TRAVIS_BUILD_DIR
-  - mkdir $HOME/Desktop/scrapping/
+  - cd /home/travis/build/davidkaggulire/webscraper
   - touch companies.txt
   - echo UEGCL > companies.txt
   - echo Kanzucode > companies.txt

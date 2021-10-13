@@ -16,7 +16,7 @@ class TestScrapping(unittest.TestCase):
 
     def test_extract_data(self):
         company_list = []
-        file_path = '$HOME/Desktop/scrapping/companies.txt'
+        file_path = '/home/travis/build/davidkaggulire/webscraper/companies.txt'
         with open(file_path) as fobj:
             lines = fobj.readlines()
         for line in lines:
