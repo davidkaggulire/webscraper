@@ -10,12 +10,22 @@ services:
 
 addons:
   chrome: stable
-  sauce_connect:
-    username: "oauth-dkaggulire-e89a1"
-    access_key: "976e4359-704a-4799-a9ed-3d2c2b6d802a"
+  
 
 before_script:
   - export DISPLAY=:99.0
+  - mkdir $HOME/Desktop/scrapping/
+  - touch companies.txt
+  - echo UEGCL > companies.txt
+  - echo Kanzucode > companies.txt
+  - echo Bell > companies.txt
+  - echo NBS > companies.txt
+  - echo Bukedde > companies.txt
+  - echo Grammarly > companies.txt
+  - echo NewVision > companies.txt
+  - echo Monitor > companies.txt
+  - echo Linkedin > companies.txt
+  - echo Sony > companies.txt
   - sudo apt-get install unzip
   - wget -N https://chromedriver.storage.googleapis.com/93.0.4577.63/chromedriver_linux64.zip -P ~/Downloads
   - unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads
