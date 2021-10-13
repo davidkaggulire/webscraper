@@ -2,6 +2,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/davidkaggulire/webscraper/badge.svg?branch=main)](https://coveralls.io/github/davidkaggulire/webscraper?branch=main)
 
+[![codecov](https://codecov.io/gh/davidkaggulire/webscraper/branch/main/graph/badge.svg?token=FK4L7HYDKH)](https://codecov.io/gh/davidkaggulire/webscraper)
+
 # Webscraper
 Python Webscraper that fetches a list of companies from a text file and scrapes Twitter using the given company names
 
