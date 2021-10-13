@@ -27,10 +27,8 @@ def search_google():
     for company in companies:
         payload = {'q': company}
         URL = 'https://www.google.com/search?'
-        get_results = requests.get(URL, params=payload)
-        
+        get_results = requests.get(URL, params=payload) 
         soup = BeautifulSoup(get_results.content,"html.parser")
-
         tags=soup.find_all("a")
         
         for tag in tags:
@@ -51,7 +49,6 @@ def pick_twitter_url():
     twitter_urls = []
 
     for company in company_urls:
-        
         expression = r'https:\/\/twitter.com\/[A-Za-z0-9-]+'
         
         match = re.findall(expression, company['company_url'])
@@ -62,9 +59,6 @@ def pick_twitter_url():
                 twitter_link['link'] = lnk
                 if twitter_link not in twitter_urls:
                     twitter_urls.append(twitter_link)
-                
-        else: 
-            pass
 
     return twitter_urls  
 
@@ -91,9 +85,9 @@ def scrape_twitter():
             my_dict = {}
             my_dict["company_name"] = twitter_url["company_name"]
             my_dict['twitter_url'] = twitter_url["link"]
-            my_dict["company_url"] = company_link
-                
+            my_dict["company_url"] = company_link    
             output_company.append(my_dict)
+
         except:
             print('Company URL not found...')
             my_dict = {}
@@ -101,6 +95,7 @@ def scrape_twitter():
             my_dict['twitter_url'] = twitter_url["link"]
             my_dict["company_url"] = "Error processing"
             output_company.append(my_dict)
+
     print(output_company)
     return output_company
 
@@ -117,19 +112,13 @@ def check_company_website():
                     get_results.text))
 
             for email in new_emails:                
-                new_str = str(email)
-
-                print(new_str)
-                    
+                new_str = str(email)                    
                 if company['company_name'].lower() in new_str.lower():
-
                     new_dict = {
                         "company_name": company['company_name'],
                         "email_address": new_str
                     }
-
                     emails.append(new_dict)
-
                          
         else:
             new_dict = {
@@ -150,5 +139,6 @@ def write_to_file(filename):
                 file_object.write("{0}: {1}  \n".format(obj["company_name"], obj["email_address"]))
             else:
                 file_object.write("{0}: {1}  \n".format(obj["company_name"], obj["email_address"]))
+    
     print("Finished writing to file "+filename+".....")
     return "Completed writing to file"
