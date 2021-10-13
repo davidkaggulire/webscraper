@@ -1,5 +1,11 @@
 language: python
 
+env:
+  global:
+    - APP_SETTING="testing"
+  matrix:
+    
+
 python:
   - "3.8"
 
@@ -11,6 +17,13 @@ install:
   - pip install coverage
   - pip install codecov
 
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+  - rackup  # start a Web server
+  - sleep 3 # give Web server some time to bind to sockets, etc
+
 script:
   - python -m pytest tests --cov=. 
 
@@ -20,3 +33,6 @@ after_success:
 
 addons:
   chrome: stable
+  sauce_connect:
+    username: "oauth-dkaggulire-e89a1"
+    access_key: "976e4359-704a-4799-a9ed-3d2c2b6d802a"
