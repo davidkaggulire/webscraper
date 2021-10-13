@@ -9,7 +9,7 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 import unittest
 import requests
 
-from web_scraper import extract_data, search_google, pick_twitter_url, scrape_twitter, write_to_file
+from web_scraper import extract_data, search_google, pick_twitter_url, scrape_twitter, check_company_website, write_to_file
 
 
 class TestScrapping(unittest.TestCase):
@@ -35,6 +35,10 @@ class TestScrapping(unittest.TestCase):
 
     def test_scrape_twitter(self):        
         self.assertIsInstance(scrape_twitter(), list)
+
+    
+    def test_email_scrape(self):        
+        self.assertIsInstance(check_company_website(), list)
 
 
     def test_write_to_file(self):
